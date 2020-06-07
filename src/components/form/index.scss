@@ -1,0 +1,9 @@
+@use "foundations/" as *;
+
+form {
+    
+}
+
+fieldset {
+    margin: get-spacing(1, 0)
+}

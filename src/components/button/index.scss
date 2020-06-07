@@ -1,0 +1,59 @@
+@use "foundations/" as *;
+
+
+$_padding: get-spacing(1,2);
+$_border-radius: 3px;
+
+.button {
+    @include get-typography(pear);
+    @include get-transition(all);
+    
+    color: $blue;
+    padding: $_padding;
+    border: 1px solid transparent;
+    border-radius: $_border-radius;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.5;
+    
+    &:hover {
+        background: lighten($blue, 35%);
+    }
+    
+    &:active {
+        background: lighten($blue, 32%);
+    }
+    
+    &:focus {
+        outline: 0;
+        
+        &:before {
+            content: ' ';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 1px solid $blue;
+            border-radius: $_border-radius;
+        }
+    }
+    
+    &--primary {
+        background: $blue;
+        color: $white;
+        
+        &:hover {
+            background: darken($blue, 10%)
+        }
+       
+        &:active {
+            background: darken($blue, 20%);
+        }
+    }
+    
+    &--secondary {
+        border-color: $blue;
+    }
+}

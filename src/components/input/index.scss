@@ -1,0 +1,41 @@
+@use "foundations/" as *;
+
+$_border-color: $neutral-400;
+$_border-color-active: $neutral-600;
+$_border-radius: 4px;
+$_spacing: calc(#{get-spacing(1)} + #{get-spacing(quarter)});
+$_max-width: 480px;
+
+.form-control {
+    @include get-transition(all);
+    @include get-typography(kiwi);
+
+    padding: $_spacing;
+    border: 1px solid $_border-color;
+    border-radius: $_border-radius;
+    display: block;
+    width: 100%;
+    max-width: $_max-width;
+   
+   &:hover {
+       box-shadow: 0 0 0 1px $_border-color-active inset;
+   }
+   
+   &:focus {
+       outline: none;
+       box-shadow: 0 0 0 2px $_border-color-active inset;
+   }
+   
+   &--error {
+       border-color: $validation-danger;
+        
+        &:hover {
+            box-shadow: 0 0 0 1px $validation-danger inset;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px $validation-danger inset;
+        }
+   }
+}

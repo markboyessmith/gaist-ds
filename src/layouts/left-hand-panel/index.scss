@@ -1,0 +1,32 @@
+@use "foundations/" as *;
+
+$_layout-spacing: get-spacing(4);
+
+.layout.layout--left-hand-navigation {
+    display: grid;
+    grid-template-areas: "nav main aside";
+    grid-template-columns: minmax(280px, 320px) 1fr auto;
+    grid-template-rows: 1fr;
+    grid-gap: $_layout-spacing;
+    
+    height: 100vh;
+    overflow: hidden;
+    
+    .layout__nav {
+        grid-area: nav;
+        background: $white;
+        padding: get-spacing(4, 6);
+        box-shadow: get-box-shadow(2);
+    }
+  
+    .layout__main {
+        grid-area: main;   
+        padding: $_layout-spacing;
+    }
+  
+    .layout__aside {
+        grid-area: aside;
+        padding: $_layout-spacing;
+        
+    }
+}

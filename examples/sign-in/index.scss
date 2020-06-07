@@ -1,0 +1,45 @@
+@use "../../src/foundations/" as *;
+
+.sign-in {
+    
+    display: grid;
+    grid-template-areas: "main aside";
+    grid-template-columns: minmax(320px, 540px) 1fr;
+    grid-template-rows: 1fr;
+    height:100vh;
+    
+    &__main {
+        padding: get-spacing(4, 10);
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+    
+    &__aside {
+        background: url(/bg.jpg) no-repeat right center;
+        background-size: cover;
+    }
+    
+    &__form-container {
+        align-self: center;
+    }
+    
+    &__form {
+        margin: get-spacing(4,0);
+    }
+    
+    &__title {
+        @include get-typography(pineapple);
+        margin: get-spacing(0, 0, 2);
+    }
+    
+    &__suggestion {
+        @include get-typography(strawberry);
+        line-height: 1.5;
+        max-width: 30ch;
+    }
+    
+    &__button-group {
+        margin: get-spacing(3,0,0);
+    }
+    
+}

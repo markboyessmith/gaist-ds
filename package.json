@@ -1,0 +1,22 @@
+{
+  "name": "GaistDesignSystem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "css-loader": "^3.5.3",
+    "node-sass-json-importer": "^4.3.0",
+    "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@storybook/html": "^5.3.19",
+    "babel-loader": "^8.1.0"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006 -s ./assets",
+    "build-storybook": "build-storybook"
+  }
+}

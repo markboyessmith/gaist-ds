@@ -1,0 +1,31 @@
+@use "foundations/" as *;
+
+.layout.layout--three-column {
+    display: grid;
+    grid-template-areas: "nav main aside";
+    grid-template-columns: minmax(320px, 360px) 1fr minmax(320px, 360px);
+    grid-template-rows: 1fr;
+    
+    height: 100%;
+    overflow: hidden;
+    
+    background: $neutral-100;
+    
+    .layout__nav {
+        grid-area: nav;
+        box-shadow: get-box-shadow(3);
+        z-index: $z-first
+    }
+  
+    .layout__main {
+        grid-area: main;   
+        background: white;
+        z-index: $z-ground;
+    }
+  
+    .layout__aside {
+        grid-area: aside;
+        box-shadow: get-box-shadow(2); 
+        z-index: $z-first
+    }
+}

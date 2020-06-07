@@ -1,0 +1,41 @@
+@use "foundations/" as *;
+
+$_logo-width : 72px;
+
+.masthead {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-rows: min-content;
+    align-items: center;
+    grid-template-areas: "logo spacer nav avatar";
+    padding: get-spacing(3);
+    
+    background: $neutral-900;
+    
+    &__logo {
+        width: $_logo-width;
+        grid-area: logo;
+    }
+    
+    &__link {
+         position: relative;
+        &:focus::before {
+            content: ' ';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            box-shadow: 0 0 0 1px $neutral-400;
+        }
+    }
+    
+    &__nav {
+        grid-area: nav;
+    }
+    
+    &__avatar {
+        grid-area: avatar;
+        margin-left: get-spacing(2);
+    }
+}

@@ -1,0 +1,15 @@
+@use "../../src/foundations/" as *;
+
+.asset-stream {
+    
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    
+    &__map {
+        background: url(/map.png) center !important;
+        background-size: cover !important;
+        position: relative;
+    }
+}

@@ -1,0 +1,22 @@
+@use "foundations/" as *;
+
+.checkbox {
+    
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: get-spacing(half);
+    align-items: center;
+    
+    &__checkbox {
+        
+    }
+    
+    &__label {
+        @include get-typography(pear);
+        margin: get-spacing(1,0);
+    }
+    
+    &--error {
+        color: $validation-danger;
+    }
+}

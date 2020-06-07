@@ -1,0 +1,64 @@
+@use "foundations/" as *;
+
+$_container-width: 640px;
+$_container-height: 320px;
+
+.modal {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    z-index: $z-ceiling;
+    
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba($neutral-800, 0.9);
+        position: absolute;
+        top: 0;
+        left:0;
+        right: 0;
+        bottom: 0;
+        z-index: $z-below;
+    }
+    
+    &__container {
+        background: white;
+        border-radius: $border-radius-large;
+        box-shadow: get-box-shadow();
+        width: $_container-width;
+        min-height: $_container-height;
+        max-height: 80vh;
+        max-width: 100vw;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+    }
+    
+    &__header {
+        @include get-typography(banana, true);
+        padding: calc(#{get-spacing(2)} + #{get-spacing(half)});
+        background: $blue;
+        
+    }
+    
+    &__body {
+        overflow: auto;
+        padding: get-spacing(3);
+        
+        &--flush {
+            padding: 0
+        }
+    }
+    
+    &__footer {
+        padding: calc(#{get-spacing(2)} + #{get-spacing(half)});
+    }
+}

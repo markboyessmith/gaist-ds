@@ -1,0 +1,27 @@
+@use "foundations/" as *;
+
+$_dimension: 36px;
+
+.avatar {
+    &__button {
+        width: $_dimension;
+        height: $_dimension;
+        border-radius: $_dimension;
+        display: block;
+        
+        cursor: pointer;
+        background: $brand;
+         position: relative;
+         
+        &:focus::before {
+            content: ' ';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 1px solid $border;
+            border-radius:  $_dimension
+        }
+    }
+}

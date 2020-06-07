@@ -1,0 +1,71 @@
+@use "../../src/foundations/" as *;
+
+.video-player {
+    
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    background: $neutral-900;
+    
+    &__map {
+        background: url(/map.png) center !important;
+        background-size: cover !important;
+    }
+    
+    &__videos {
+        display: grid;
+        
+        grid-template-areas: "map map primary primary" "front left rear right" ". playbar playbar .";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: min-content min-content 1fr;
+        grid-gap: get-spacing(3);
+        padding: get-spacing(0,3);
+        height :75vh;
+    }
+    
+    &__playbar {
+        grid-area: playbar;
+        justify-content: center;
+        align-items: center
+    }
+    
+    &__video {
+        overflow: hidden;
+        position: relative;
+        box-shadow: get-box-shadow(2);
+        
+        // temporary demo style
+        img {
+            border-radius: $border-radius-medium;
+            width: 100%;
+        }
+        
+        &:first-child {
+            grid-area: map
+        }
+        
+        &:nth-child(2) {
+            grid-area: primary
+        }
+        
+        &:nth-child(3) {
+            grid-area: front
+        }
+        
+        &:nth-child(4) {
+            grid-area: left
+        }
+        
+        
+        &:nth-child(5) {
+            grid-area: rear
+        }
+        
+        
+        &:nth-child(6) {
+            grid-area: right
+        }
+        
+    }
+}

@@ -1,0 +1,36 @@
+@use "foundations/" as *;
+
+$_color: $blue;
+
+.link {
+    @include get-transition(color);
+    
+    color: $_color;
+    font-weight: 600;
+    
+    position: relative;
+    text-decoration: none;
+    
+    &:hover {
+        color: darken($blue, 15%);
+        text-decoration: underline
+    }
+     
+    &:active {
+        color: darken($blue, 25%);
+    }
+    
+    &:focus::before {
+        content: ' ';
+        position: absolute;
+        top: -2px;
+        left: -4px;
+        right: -2px;
+        bottom: -4px;
+       box-shadow: 0 0 0 1px $blue;
+    }
+}
+
+p .link {
+    text-decoration: underline;   
+}

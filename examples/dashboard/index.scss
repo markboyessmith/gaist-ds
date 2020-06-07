@@ -1,0 +1,52 @@
+@use "../../src/foundations/" as *;
+
+.dashboard {
+    background: $neutral-100;
+    // Navigation
+    
+    &__logo {
+        margin-bottom: get-spacing(6);
+    }
+    
+    &__link-title {
+        @include get-typography(blueberry);
+        margin-bottom: get-spacing(1);
+    }
+    &__link-list {
+        margin: get-spacing(0, 0, 5);
+    }
+    // Main
+    
+    &__header {
+        margin: get-spacing(0, 0, 6);
+    }
+    
+    &__main {
+    }
+    
+    &__title {
+        @include get-typography(watermelon);
+        margin: get-spacing(1, 0, 3);
+    }
+    
+    &__section-title {
+        @include get-typography(grapefruit);
+        margin: get-spacing(3, 0);
+    }
+    
+    
+    // Specific areas 
+    
+    &__card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: get-spacing(4);
+        margin: get-spacing(0,0,4);
+    }
+    
+    &__split-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: get-spacing(4);
+    }
+}

@@ -1,0 +1,8 @@
+@use "foundations/" as *;
+
+.button-group {
+    display: grid;
+    justify-content: flex-end;
+    grid-gap: get-spacing(1);
+    grid-template-columns: repeat(3, max-content);
+}

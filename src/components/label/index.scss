@@ -1,0 +1,11 @@
+@use "foundations/" as *;
+
+.label {
+    @include get-typography(pear);
+    margin: get-spacing(1,0);
+    display: block;
+    
+    &--error {
+        color: $validation-danger;
+    }
+}

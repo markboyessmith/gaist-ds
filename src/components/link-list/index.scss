@@ -1,0 +1,42 @@
+@use "foundations/" as *;
+
+.link-list {
+    &__item {
+        padding: get-spacing(half, 0);
+    }
+    
+    &__link {
+        @include get-typography(pear);
+        text-decoration: none;
+        line-height: 1.75;
+        position: relative;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+            
+        &:focus::before {
+            content: ' ';
+            position: absolute;
+            top: -2px;
+            left: -4px;
+            right: -2px;
+            bottom: -4px;
+            box-shadow: 0 0 0 1px $neutral-400;
+        }
+    }
+    
+    &--horizontal {
+        display: flex;
+        
+        .link-list__link {
+            margin: get-spacing(0, 2);
+        }
+    }
+    
+    &--dark {
+        .link-list__link {
+            color: white;
+        }
+    }
+}

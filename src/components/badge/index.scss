@@ -1,0 +1,14 @@
+@use "foundations/" as *;
+
+.badge {
+    color:white;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-block;
+    margin: get-spacing(0, half);
+    padding: get-spacing(half);
+    font-size: 1em;
+    position: relative;
+    background: $blue;
+    border-radius: 4px;
+}

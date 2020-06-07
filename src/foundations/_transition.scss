@@ -1,0 +1,10 @@
+$_timing: 300ms;
+$_easing: ease;
+
+@mixin get-transition($property){
+    @if ($property) {
+        transition: $property $_timing $_easing;
+    }@else {
+        transition: all $_timing $_easing;
+    }
+}

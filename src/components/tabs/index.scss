@@ -1,0 +1,49 @@
+@use "foundations/" as *;
+
+
+.tabs {
+    @include get-transition(all);
+    
+    &__tabs-list {
+        display: flex;
+        background: $white;
+        position: relative;
+        border-bottom: 1px solid $border;
+    }
+    
+    &__content-container {}
+    
+    &__tab {
+        @include get-typography(blueberry);
+        padding: get-spacing(2, 3);
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -1px;
+        line-height: 1.5;
+        cursor:pointer;
+        
+        &:hover, &--selected {
+            border-bottom-color: $blue;
+            color: $blue;
+        }
+        
+        &--selected {
+            font-weight: 700;
+        }
+        
+        &:focus:not(:active) {
+           text-decoration: underline
+        }
+        
+    }
+    
+    &__content {
+        display: none;
+        height: 100%;
+        padding: get-spacing(3, 2);
+        
+        &--visible {
+            display: block;
+        }
+    }
+}

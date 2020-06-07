@@ -1,0 +1,68 @@
+@use "foundations/" as *;
+
+.loader {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    z-index: $z-ceiling;
+    
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba($neutral-900, 0.4);
+        position: absolute;
+        top: 0;
+        left:0;
+        right: 0;
+        bottom: 0;
+        z-index: $z-below;
+    }
+    
+    &__elements {
+        width: 40px;
+        height: 40px;
+        position:relative;
+        z-index: $z-first;
+        
+        &:before, &:after {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: $brand;
+            opacity: 0.6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: ' ';
+            animation: bounce 2.0s infinite ease-in-out;
+          }
+          
+          &:after {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+          }
+          
+          @keyframes bounce {
+            0%, 100% { 
+              transform: scale(0.0);
+              -webkit-transform: scale(0.0);
+            } 50% { 
+              transform: scale(1.0);
+              -webkit-transform: scale(1.0);
+            }
+          }
+    }
+    
+    &--fixed {
+        position: fixed;
+    }
+    
+}

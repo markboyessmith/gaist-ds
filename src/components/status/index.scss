@@ -1,0 +1,45 @@
+@use "foundations/" as *;
+
+$_size: 0.75rem;
+
+.status {
+    @include get-typography(pear);
+    display: inline-flex;
+    align-items: center;
+    
+    &__indicator  {
+        display: block;
+        width: $_size;
+        height: $_size;
+        border-radius: $_size;
+        margin-right: get-spacing(1);
+        box-shadow: 0 0 0 2px $neutral-500 inset;
+    }
+    
+    &--success {
+        .status__indicator {
+            background: $green;
+            box-shadow: none;
+        }
+    }
+    
+    &--info {
+        .status__indicator {
+            box-shadow: 0 0 0 2px $blue inset;
+        }
+    }
+    
+    &--warning {
+        .status__indicator {
+            box-shadow: 0 0 0 2px $orange inset;
+        }
+    }
+    
+    &--danger {
+        .status__indicator {
+            background: $red;
+            box-shadow: none;
+        }
+    }
+    
+}

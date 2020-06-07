@@ -1,0 +1,91 @@
+@use './color' as *;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    font-family: 'Open Sans', serif
+}
+
+$_typography-map: (
+    watermelon: (
+        font-size: 2rem,
+        font-weight: 500,
+        color: $text-main,
+        line-height: 1.2
+    ),
+    pineapple: (
+        font-size: 1.5rem,
+        font-weight: 600,
+        color: $text-main,
+        line-height: 1.2
+    ),
+    grapefruit: (
+        font-size: 1.25rem,
+        font-weight: 600,
+        color: $text-main,
+        line-height: 1.2
+    ),
+    banana: (
+        font-size: 1.125rem,
+        font-weight: 600,
+        color: $text-main,
+        line-height: 1.2
+    ),
+    orange: (
+        font-size: 1rem,
+        font-weight: 500,
+        color: $text-secondary,
+        line-height: 1.2
+    ),
+    apple: (
+        font-size: 1rem,
+        font-weight: 500,
+        color: $text-main,
+        line-height: 1.2
+    ),
+    pear: (
+        font-size: 0.875rem,
+        font-weight: 600,
+        color: $text-main,
+        line-height: 1.2
+    ),
+    kiwi: (
+        font-size: 0.875rem,
+        font-weight: 500,
+        color: $text-main,
+        line-height: 1.2
+    ),
+    strawberry: (
+        font-size: 0.875rem,
+        font-weight: 500,
+        color: $text-secondary,
+        line-height: 1.2
+    ),
+    blueberry: (
+        font-size: 0.75rem,
+        font-weight: 500,
+        color: $text-secondary,
+        line-height: 1.2,
+        text-transform: uppercase,
+        letter-spacing: 1px
+    ),
+);
+
+@mixin get-typography($setting, $dark: false) {
+    
+    $result: map-get($_typography-map, $setting);
+    
+    @if ($result){
+        @each $property, $value in $result {
+            #{$property}: $value
+        }
+        
+        @if ($dark) {
+            color: white;
+        }
+    }
+    @else {
+        @error 'get-typography – #{$setting} is not a valid setting'
+    }
+    
+}
+

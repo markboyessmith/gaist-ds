@@ -1,0 +1,45 @@
+<div class="sign-in">
+    <main class="sign-in__main">
+            <img src="/logo-dark.png" alt="" class="dashboard__logo">
+        
+        <div class="sign-in__form-container">
+            <h1 class="sign-in__title">
+                Sign in to your Gaist account
+            </h1>
+            
+            <p class="sign-in__suggestion">
+                Can't remember your email address or password?
+                <a href="/" class="link">Reset your account</a>
+            </p>
+            
+            <form class="sign-in__form">
+                <fieldset>
+                    <label for="email-address" class="label">Email address</label>
+                    <input type="text" class="form-control" id="email-address" required/>
+                </fieldset>
+            
+                <fieldset>
+                    <label for="password" class="label">Password</label>
+                    <input type="password" class="form-control" id="password" required/>
+                </fieldset>      
+                
+                <fieldset>
+                    <div class="checkbox">
+                        <input type="checkbox" class="checkbox__input"/>
+                        <label for="" class="checkbox__label">Remember my details</label>
+                    </div>
+                </fieldset>
+                
+                <ul class="sign-in__button-group button-group">
+                    <li class="button-group__item">
+                        <button class="button button--secondary">Sign in with Google</button>
+                    </li>
+                    <li class="button-group__item">
+                        <button type="submit" class="button button--primary">Sign in</button>
+                    </li>
+                </ul>  
+            </form>
+        </div>    
+    </main>
+    <aside class="sign-in__aside"></aside>
+</div>

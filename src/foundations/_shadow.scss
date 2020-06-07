@@ -1,0 +1,17 @@
+@use './color' as *;
+
+@function get-box-shadow($level: 1){
+    
+    @if $level == 1 {
+        @return 1px 4px 1px rgba($neutral-900, 0.1);
+    }
+    @else if $level == 2 {
+        @return 0 0px 8px 0px rgba($neutral-900, 0.05), 0 1px 24px 4px rgba($neutral-900, 0.05);
+    }
+    @else if $level == 3 {
+        @return 0 0px 8px 2px rgba($neutral-900, 0.03), 0 1px 24px 4px rgba($neutral-900, 0.03), 0 0px 32px 0px rgba($neutral-900, 0.03);
+    }
+    @else {
+        @error 'Box-shadow does not support setting: #{$level}';
+    }
+}

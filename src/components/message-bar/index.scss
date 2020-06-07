@@ -1,0 +1,33 @@
+@use "foundations/" as *;
+
+$_spacing: get-spacing(2);
+
+$_border-width: 2px;
+$_border-radius: 4px;
+
+$_border-color: $blue;
+
+.message-bar {
+    @include get-typography(pear);
+    background: $white;
+    padding: $_spacing;
+    margin: get-spacing(2) 0;
+    border-radius: $_border-radius;
+    border: $_border-width solid $_border-color;
+    
+    &--success {
+        border-color: $validation-success;
+    }
+    
+    &--info {
+        border-color: $validation-info;
+    }
+    
+    &--warning {
+        border-color: $validation-warning;
+    }
+    
+    &--danger {
+        border-color: $validation-danger;
+    }
+}
